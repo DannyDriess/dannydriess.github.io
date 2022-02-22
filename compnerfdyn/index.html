@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <style>
+    body {
+      padding-top: 70px;
+    }
+
+    div.row {
+      padding-top: 70px;
+      margin-top: -70px;
+    }
+
+    .navbar {
+      background-color: #0D19A3;
+    }
+
+    h3 {
+      color: #0D19A3;
+    }
+
+    hr {
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  </style>
+
+  <title>Learning Multi-Object Dynamics with Compositional Neural Radiance Fields</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row" id="home">
+      <div class="col p-lg-5 mx-auto text-center">
+        <h1 class="titleLine display-5 font-weight-normal">Learning Multi-Object Dynamics with Compositional Neural Radiance Fields</h1>
+        <p class="lead font-weight-normal">
+          <span style="margin-right: 30px;">Danny Driess</span> 
+          <span style="margin-right: 30px;">Zhiao Huang</span>
+          <span style="margin-right: 30px;">Yunzhu Li</span>
+          <span style="margin-right: 30px;">Russ Tedrake</span>
+          <span>Marc Toussaint</span> 
+        </p>
+        <p class="font-weight-normal">TU Berlin, MIT, UC San Diego</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3>Box Sorting Task with 4 Objects</h3>
+        <p>
+          The video shows the closed-loop visual planning and execution result in the simulator.
+          The goal is to move all yellow blocks to the top and all blue to the bottom.
+          The initial state is relatively adversarial, i.e. a greedy strategy of just pushing
+          the objects straight to the goal region would fail.
+          Notice how the planned behavior sometimes leads to multiple objects being pushed at once, 
+          as it reduces the cost most.
+        </p>
+        <p class="text-center">
+          <video src="videos/fourObjects.mp4" controls="controls" style="width: 500px;"></video>          
+        </p>
+      </div>
+    </div>
+    
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Box Sorting Task with 6 Objects</h3>
+        <p>
+          This video shows the closed-loop visual planning and execution result in the simulator for a box-sorting
+          task with 6 objects.
+          The model has been trained on scenes that contain exactly 4 objects.
+          Due to the structure of our proposed framework, the model is able to generalize to more objects
+          than during training and therefore solve this complex box sorting task.
+        </p>
+        <p class="text-center">
+          <video src="videos/sixObjects.mp4" controls="controls" style="width: 500px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+    
+    <div class="row">
+      <div class="col">
+        <h3>Predictions of the Model during Planning</h3>
+        <p>
+          This video shows the predictions of the model for a very long horizon, after observing 
+          the scene only at the beginning.
+          Although it is clearly not perfect, given how many steps it predicts into the future,
+          both the reconstructions and the dynamics behavior is still qualitatively useful.
+          There is not much drift of the objects, which is achieved through by exploiting
+          the adjacency matrix estimation from the model itself.
+        </p>
+        <p class="text-center">
+          <video src="videos/longTermPushingPredictionsDuringPlanning.mp4" controls="controls" style="width: 300px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Influence of Estimating the Adjacency Matrix</h3>
+        <p>
+          This video shows the predictions of the model after observing the scene only once at the beginning.
+          The right video corresponds to a case where the adjacency matrix is only estimated for every time step, but not
+          during message passing (Sec. VII.C-2) and the quasi static assumption (Sec. VII.C-1) is not exploited.
+          When expoliting the information in the estimated adjacency matrix from the model fully, the predictions are more
+          stable into the future with little drift.
+        </p>
+        <p class="text-center">
+          <video src="videos/compAdjacency.mov" controls="controls" style="width: 720px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Comparison to Dense Adjacency Matrix</h3>
+        <p>
+          Here we compare to using a GNN with a dense adjacency matrix (Sec. VII.C-3).
+          As one can see, a dense adjacency matrix leads to significantly more drift compared to our proposed method of
+          estimating the adjacency matrix from the model's own prediction.
+          This drift is the reason why planning with a model using a dense adjacency matrix fails (Table 1 in the paper).
+        </p>
+        <p class="text-center">
+          <video src="videos/compDenseAdjacency.mov" controls="controls" style="width: 720px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Comparison to CNN Decoder</h3>
+        <p>
+          Replacing the compositional NeRF decoder with a 2D compositional CNN decoder, not only the reconstruction at the
+          very beginning is significantly less sharp, the predictions become very quickly useless after only a few 
+          time steps with the CNN decoder based model.
+        </p>
+        <p class="text-center">
+          <video src="videos/compCNNDecoder.mov" controls="controls" style="width: 720px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Predictions of the Model on Test Data with 4 Objects</h3>
+        <p>
+          Here we show the forward predictions of the learned model on a test dataset containing 4 objects.
+          Each scene is observed only once and the subsequent reconstructions are purely generated from the model's
+          own predictions.
+          The images in the top row are rendered with the learned model.
+        </p>
+        <p class="text-center">
+          <video src="videos/prediction_4_objects.mov" controls="controls" style="width: 900px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col">
+        <h3>Scene Generation</h3>
+        <p>
+          This video shows how novel scenes can be composed/transformed with the model.
+          In the first part, objects are observed individually and then composed into a scene while applying rigid transformations to the objects.
+          In the second part, rigid transformations are applied to individual objects in an observed scene.
+          Note that the rigid transformations are achieved through the implicit object encoder, i.e. the transformed object lead to
+          new latent vectors describing their configuration in the scene and not only the appearance/rendered image changes.
+          All images with black background are rendered through the model.
+        </p>
+        <p class="text-center">
+          <video src="videos/sceneGeneration.mov" controls="controls" style="width: 900px;"></video>          
+        </p>
+      </div>
+    </div>
+
+    <hr>    
+
+
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
