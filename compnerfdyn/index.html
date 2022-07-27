@@ -10,7 +10,7 @@
 
   <style>
     body {
-      padding-top: 70px;
+      padding-top: 20px;
     }
 
     div.row {
@@ -39,7 +39,7 @@
 <body>
 
   <div class="container">
-    <div class="row" id="home">
+    <div class="row">
       <div class="col p-lg-5 mx-auto text-center">
         <h1 class="titleLine display-5 font-weight-normal">Learning Multi-Object Dynamics with Compositional Neural Radiance Fields</h1>
         <p class="lead font-weight-normal">
@@ -50,157 +50,37 @@
           <span>Marc Toussaint</span> 
         </p>
         <p class="font-weight-normal">TU Berlin, MIT, UC San Diego</p>
+        <p>
+          <a class="btn btn-primary" href="../papers/22-driess-compNerfPreprint.pdf" target="_blank" role="button">PDF</a>
+          <a class="btn btn-primary" href="https://arxiv.org/abs/2202.11855" target="_blank" role="button">arXiv</a>
+          <!-- <a class="btn btn-primary" href="" target="_blank" role="button">Code (comming soon)</a> -->
+          <button class="btn btn-primary" type="button" data-toggle="collapse"
+            data-target="#bibtex_22-driess-NeRF-RL-preprint">Bibtex</button>
+        </p>
+        <div class="collapse text-left" id="bibtex_22-driess-NeRF-RL-preprint">
+          <div>
+            <pre>@article{2022-driess-compNerfPreprint,
+  title={Learning Multi-Object Dynamics with Compositional Neural Radiance Fields},
+  author={Driess, Danny and Huang, Zhiao and Li, Yunzhu and Tedrake, Russ and Toussaint, Marc},
+  journal={arXiv preprint arXiv:2202.11855},
+  year={2022}
+}</pre>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col">
+        <p class="text-center">
+          <video src="video.mp4" controls="controls" style="width: 100%;"></video>
+        </p>
+      </div>
+    </div>
+
   </div>
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h3>Box Sorting Task with 4 Objects</h3>
-        <p>
-          The video shows the closed-loop visual planning and execution result in the simulator.
-          The goal is to move all yellow blocks to the top and all blue to the bottom.
-          The initial state is relatively adversarial, i.e. a greedy strategy of just pushing
-          the objects straight to the goal region would fail.
-          Notice how the planned behavior sometimes leads to multiple objects being pushed at once, 
-          as it reduces the cost most.
-        </p>
-        <p class="text-center">
-          <video src="videos/fourObjects.mp4" controls="controls" style="width: 500px;"></video>          
-        </p>
-      </div>
-    </div>
-    
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Box Sorting Task with 6 Objects</h3>
-        <p>
-          This video shows the closed-loop visual planning and execution result in the simulator for a box-sorting
-          task with 6 objects.
-          The model has been trained on scenes that contain exactly 4 objects.
-          Due to the structure of our proposed framework, the model is able to generalize to more objects
-          than during training and therefore solve this complex box sorting task.
-        </p>
-        <p class="text-center">
-          <video src="videos/sixObjects.mp4" controls="controls" style="width: 500px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-    
-    <div class="row">
-      <div class="col">
-        <h3>Predictions of the Model during Planning</h3>
-        <p>
-          This video shows the predictions of the model for a very long horizon, after observing 
-          the scene only at the beginning.
-          Although it is clearly not perfect, given how many steps it predicts into the future,
-          both the reconstructions and the dynamics behavior is still qualitatively useful.
-          There is not much drift of the objects, which is achieved through by exploiting
-          the adjacency matrix estimation from the model itself.
-        </p>
-        <p class="text-center">
-          <video src="videos/longTermPushingPredictionsDuringPlanning.mp4" controls="controls" style="width: 300px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Influence of Estimating the Adjacency Matrix</h3>
-        <p>
-          This video shows the predictions of the model after observing the scene only once at the beginning.
-          The right video corresponds to a case where the adjacency matrix is only estimated for every time step, but not
-          during message passing (Sec. VII.C-2) and the quasi static assumption (Sec. VII.C-1) is not exploited.
-          When expoliting the information in the estimated adjacency matrix from the model fully, the predictions are more
-          stable into the future with little drift.
-        </p>
-        <p class="text-center">
-          <video src="videos/compAdjacency.mov" controls="controls" style="width: 720px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Comparison to Dense Adjacency Matrix</h3>
-        <p>
-          Here we compare to using a GNN with a dense adjacency matrix (Sec. VII.C-3).
-          As one can see, a dense adjacency matrix leads to significantly more drift compared to our proposed method of
-          estimating the adjacency matrix from the model's own prediction.
-          This drift is the reason why planning with a model using a dense adjacency matrix fails (Table 1 in the paper).
-        </p>
-        <p class="text-center">
-          <video src="videos/compDenseAdjacency.mov" controls="controls" style="width: 720px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Comparison to CNN Decoder</h3>
-        <p>
-          Replacing the compositional NeRF decoder with a 2D compositional CNN decoder, not only the reconstruction at the
-          very beginning is significantly less sharp, the predictions become very quickly useless after only a few 
-          time steps with the CNN decoder based model.
-        </p>
-        <p class="text-center">
-          <video src="videos/compCNNDecoder.mov" controls="controls" style="width: 720px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Predictions of the Model on Test Data with 4 Objects</h3>
-        <p>
-          Here we show the forward predictions of the learned model on a test dataset containing 4 objects.
-          Each scene is observed only once and the subsequent reconstructions are purely generated from the model's
-          own predictions.
-          The images in the top row are rendered with the learned model.
-        </p>
-        <p class="text-center">
-          <video src="videos/prediction_4_objects.mov" controls="controls" style="width: 900px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="col">
-        <h3>Scene Generation</h3>
-        <p>
-          This video shows how novel scenes can be composed/transformed with the model.
-          In the first part, objects are observed individually and then composed into a scene while applying rigid transformations to the objects.
-          In the second part, rigid transformations are applied to individual objects in an observed scene.
-          Note that the rigid transformations are achieved through the implicit object encoder, i.e. the transformed object lead to
-          new latent vectors describing their configuration in the scene and not only the appearance/rendered image changes.
-          All images with black background are rendered through the model.
-        </p>
-        <p class="text-center">
-          <video src="videos/sceneGeneration.mov" controls="controls" style="width: 900px;"></video>          
-        </p>
-      </div>
-    </div>
-
-    <hr>    
-
-
-  </div>
+   
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
