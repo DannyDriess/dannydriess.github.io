@@ -61,7 +61,7 @@
     </div>
     <div class="row pt-3">
       <div class="col-md-6">
-        <a href="mailto:danny.driess@ipvs.uni-stuttgart.de" class="mr-3">Email</a>
+        <p>Email: <code style="font-size: 100%; background-color: #f4f2f9; color: #4e25c7;">danny dot driess at gmail dot com</code></p> 
         <a href="https://scholar.google.de/citations?user=wxnzyjwAAAAJ" target="_blank" class="mr-3">Google Scholar</a>
         <a href="https://twitter.com/DannyDriess" target="_blank" class="mr-3">Twitter</a>
       </div>
@@ -70,31 +70,63 @@
 
   <div class="container pb-3 pt-5">
     <h2>Publications</h2>
+    <p>For a full list of publications see <a href="https://scholar.google.de/citations?user=wxnzyjwAAAAJ" target="_blank" class="mr-3">Google Scholar</a></p>
   </div>
 
   <div class="container">
-  
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
-        <img src="papers/22-driess-NeRF-RL-preprint.png" class="img-fluid">
+      <div class="col-md-3">
+        <video class="img-fluid" playsinline autoplay muted loop>
+          <source src="papers/23-driess-palme-preprint.mp4" type="video/mp4">
+          <img src="papers/23-driess-palme-preprint.png" class="img-fluid">
+        </video> 
+      </div>
+      <div class="col-md-8">
+        <h5><a href="https://palm-e.github.io/" target="_blank">PaLM-E: An Embodied Multimodal Language Model</a></h5>
+        <p><span class="font-weight-bold">Danny Driess</span>, Fei Xia, Mehdi Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong Huang, Yevgen Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine, Vincent Vanhoucke, Karol Hausman, Marc Toussaint, Klaus Greff, Andy Zeng, Igor Mordatch, Pete Florence<br> arXiv 2023</p>
+        <p>
+          <a class="btn btn-primary" href="papers/23-driess-palme-preprint.pdf" target="_blank" role="button">PDF</a>
+          <a class="btn btn-primary" href="https://palm-e.github.io/" target="_blank">Videos</a>
+          <a class="btn btn-primary" href="https://arxiv.org/abs/2303.03378" target="_blank">arXiv</a>
+          <button class="btn btn-primary" type="button" data-toggle="collapse"
+            data-target="#bibtex_23-driess-palme-preprint">Bibtex</button>
+        </p>
+        <div class="collapse" id="bibtex_23-driess-palme-preprint">
+          <div>
+            <pre>@inproceedings{driess2023palme,
+    title={PaLM-E: An Embodied Multimodal Language Model},
+    author={Driess, Danny and Xia, Fei and Sajjadi, Mehdi S. M. and Lynch, Corey and Chowdhery, Aakanksha and Ichter, Brian and Wahid, Ayzaan and Tompson, Jonathan and Vuong, Quan and Yu, Tianhe and Huang, Wenlong and Chebotar, Yevgen and Sermanet, Pierre and Duckworth, Daniel and Levine, Sergey and Vanhoucke, Vincent and Hausman, Karol and Toussaint, Marc and Greff, Klaus and Zeng, Andy and Mordatch, Igor and Florence, Pete},
+    booktitle={arXiv preprint arXiv:2303.03378},
+    year={2023}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end bib item -->
+
+    <!-- start bib item -->
+    <div class="row pb-4">
+      <div class="col-md-3">
+        <img src="papers/22-driess-NeRF-RL.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Reinforcement Learning with Neural Radiance Fields</h5>
-        <p>Danny Driess, Ingmar Schubert, Pete Florence, Yunzhu Li, Marc Toussaint <br> NeurIPS, 2022 (to appear)</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Ingmar Schubert, Pete Florence, Yunzhu Li, Marc Toussaint <br> NeurIPS, 2022</p>
         <p>
-          <a class="btn btn-primary" href="papers/22-driess-NeRF-RL-preprint.pdf" target="_blank" role="button">PDF</a>
-          <a class="btn btn-primary" href="nerf-rl/index.html" target="_blank">Videos</a>
+          <a class="btn btn-primary" href="papers/22-driess-NeRF-RL.pdf" target="_blank" role="button">PDF</a>
+          <a class="btn btn-primary" href="nerf-rl/index.html" target="_blank">Video</a>
           <a class="btn btn-primary" href="https://arxiv.org/abs/2206.01634" target="_blank">arXiv</a>
           <button class="btn btn-primary" type="button" data-toggle="collapse"
-            data-target="#bibtex_22-driess-NeRF-RL-preprint">Bibtex</button>
+            data-target="#bibtex_22-driess-NeRF-RL">Bibtex</button>
         </p>
-        <div class="collapse" id="bibtex_22-driess-NeRF-RL-preprint">
+        <div class="collapse" id="bibtex_22-driess-NeRF-RL">
           <div>
-            <pre>@article{22-driess-NeRF-RL-preprint,
+            <pre>@InProceedings{22-driess-NeRF-RL,
   title={Reinforcement Learning with Neural Radiance Fields},
   author={Driess, Danny and Schubert, Ingmar and Florence, Pete and Li, Yunzhu and Toussaint, Marc},
-  journal={arXiv preprint arXiv:2206.01634},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2022}
 }</pre>
           </div>
@@ -105,26 +137,31 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
-        <img src="papers/22-driess-compNerfPreprint.png" class="img-fluid">
+      <div class="col-md-3">
+        <img src="papers/22-driess-compNerf.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Learning Multi-Object Dynamics with Compositional Neural Radiance Fields</h5>
-        <p>Danny Driess, Zhiao Huang, Yunzhu Li, Russ Tedrake, Marc Toussaint <br> CoRL, 2022 (to appear)</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Zhiao Huang, Yunzhu Li, Russ Tedrake, Marc Toussaint <br> CoRL, 2022</p>
         <p>
-          <a class="btn btn-primary" href="papers/22-driess-compNerfPreprint.pdf" target="_blank" role="button">PDF</a>
+          <a class="btn btn-primary" href="papers/22-driess-compNerf.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="compnerfdyn/index.html" target="_blank">Video</a>
           <a class="btn btn-primary" href="https://arxiv.org/abs/2202.11855" target="_blank">arXiv</a>
           <button class="btn btn-primary" type="button" data-toggle="collapse"
-            data-target="#bibtex_22-driess-compNerfPreprint">Bibtex</button>
+            data-target="#bibtex_22-driess-compNerf">Bibtex</button>
         </p>
-        <div class="collapse" id="bibtex_22-driess-compNerfPreprint">
+        <div class="collapse" id="bibtex_22-driess-compNerf">
           <div>
-            <pre>@article{2022-driess-compNerfPreprint,
-  title={Learning Multi-Object Dynamics with Compositional Neural Radiance Fields},
-  author={Driess, Danny and Huang, Zhiao and Li, Yunzhu and Tedrake, Russ and Toussaint, Marc},
-  journal={arXiv preprint arXiv:2202.11855},
-  year={2022}
+            <pre>@InProceedings{2022-driess-compNerf,
+  title = {Learning Multi-Object Dynamics with Compositional Neural Radiance Fields},
+  author = {Driess, Danny and Huang, Zhiao and Li, Yunzhu and Tedrake, Russ and Toussaint, Marc},
+  booktitle = {Proc{.} of the Annual Conf{.} on Robot Learning (CoRL)},
+  pages = {1755--1768},
+  year = {2023},
+  volume = {205},
+  series = {Proceedings of Machine Learning Research},
+  month = {14--18 Dec},
+  publisher = {PMLR},
 }</pre>
           </div>
         </div>
@@ -134,12 +171,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/21-driess-CoRL.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Learning Models as Functionals of Signed-Distance Fields for Manipulation Planning</h5>
-        <p>Danny Driess, Jung-Su Ha, Marc Toussaint, Russ Tedrake <br> CoRL 2021</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Jung-Su Ha, Marc Toussaint, Russ Tedrake <br> CoRL 2021</p>
         <p>
           <a class="btn btn-primary" href="papers/21-driess-CoRL.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=ga8Wlkss7co" target="_blank">Video</a>
@@ -162,12 +199,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/21-driess-IJRR.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Learning to Solve Sequential Physical Reasoning Problems from a Scene Image</h5>
-        <p>Danny Driess, Jung-Su Ha, Marc Toussaint <br> IJRR 2021</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Jung-Su Ha, Marc Toussaint <br> IJRR 2021</p>
         <p>
           <a class="btn btn-primary" href="papers/21-driess-IJRR.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=W6zLkZeN8VA" target="_blank">Video</a>
@@ -192,12 +229,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/21-driess-ICRA.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Learning Geometric Reasoning and Control for Long-Horizon Tasks from Visual Input</h5>
-        <p>Danny Driess, Jung-Su Ha, Russ Tedrake, Marc Toussaint <br> ICRA 2021</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Jung-Su Ha, Russ Tedrake, Marc Toussaint <br> ICRA 2021</p>
         <p>
           <a class="btn btn-primary" href="papers/21-driess-ICRA.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=AcPWRTkr3_g" target="_blank">Video</a>
@@ -220,12 +257,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/20-driess-RSS.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Deep Visual Reasoning: Learning to Predict Action Sequences for Task and Motion Planning from an Initial Scene Image</h5>
-        <p>Danny Driess, Jung-Su Ha, Marc Toussaint<br> R:SS 2020 </p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Jung-Su Ha, Marc Toussaint<br> R:SS 2020 </p>
         <p>
           <a class="btn btn-primary" href="papers/20-driess-RSS.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=i8yyEbbvoEk" target="_blank">Video</a>
@@ -247,12 +284,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/20-driess-ICRA.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Deep Visual Heuristics: Learning Feasibility of Mixed-Integer Programs for Manipulation Planning</h5>
-        <p>Danny Driess, Ozgur Oguz, Jung-Su Ha, Marc Toussaint <br> ICRA 2020</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Ozgur Oguz, Jung-Su Ha, Marc Toussaint <br> ICRA 2020</p>
         <p><strong>Nominated for Best Paper Award in Automation</strong></p>
         <p>
           <a class="btn btn-primary" href="papers/20-driess-ICRA.pdf" target="_blank" role="button">PDF</a>
@@ -276,12 +313,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <!-- <img src="" class="img-fluid"> -->
       </div>
       <div class="col-md-8">
         <h5>Probabilistic framework for constrained manipulations and task and motion planning under uncertainty</h5>
-        <p>Jung-Su Ha, Danny Driess, Marc Toussaint<br> ICRA 2020 </p>
+        <p>Jung-Su Ha, <span class="font-weight-bold">Danny Driess</span>, Marc Toussaint<br> ICRA 2020 </p>
         <p>
           <a class="btn btn-primary" href="https://arxiv.org/pdf/2003.04259.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=CEaJdVlSZyo" target="_blank">Video</a>
@@ -304,12 +341,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/20-wochner-frontiers.jpg" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Optimality Principles in Human Point-to-Manifold Reaching Accounting for Muscle Dynamics</h5>
-        <p>Isabell Wochner, Danny Driess, Heiko Zimmermann, Daniel F. B. Haeufle, Marc Toussaint, Syn Schmitt<br>
+        <p>Isabell Wochner, <span class="font-weight-bold">Danny Driess</span>, Heiko Zimmermann, Daniel F. B. Haeufle, Marc Toussaint, Syn Schmitt<br>
           Frontiers in Computational Neuroscience 2020 </p>
         <p>
           <a class="btn btn-primary" href="https://doi.org/10.3389/fncom.2020.00038" target="_blank"
@@ -335,12 +372,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/19-driess-RSS-workshop.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Hierarchical Task and Motion Planning using Logic-Geometric Programming (HLGP)</h5>
-        <p>Danny Driess, Ozgur Oguz, Marc Toussaint<br> R:SS 2020 Workshop on Robust Task and Motion Planning </p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Ozgur Oguz, Marc Toussaint<br> R:SS 2020 Workshop on Robust Task and Motion Planning </p>
         <p>
           <a class="btn btn-primary" href="papers/19-driess-RSS-workshop.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=VndjJtzl7ho" target="_blank">Video</a>
@@ -363,12 +400,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/19-driess-IROS.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Active Inverse Model Learning with Error and Reachable Set Estimates</h5>
-        <p>Danny Driess, Syn Schmitt, Marc Toussaint<br>IROS 2019</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Syn Schmitt, Marc Toussaint<br>IROS 2019</p>
         <p>
           <a class="btn btn-primary" href="papers/19-driess-IROS.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=3ks0sMa3BgM" target="_blank">Video</a>
@@ -391,12 +428,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/19-driess-ICRA.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Active Multi-Contact Continuous Tactile Exploration with Gaussian Process Differential Entropy</h5>
-        <p>Danny Driess, Daniel Hennes, Marc Toussaint<br> ICRA 2019 </p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Daniel Hennes, Marc Toussaint<br> ICRA 2019 </p>
         <p>
           <a class="btn btn-primary" href="papers/19-driess-ICRA.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=_FOkJoJLOPM" target="_blank">Video</a>
@@ -419,13 +456,13 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/18-driess-ICRA.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Learning to Control Redundant Musculoskeletal Systems with Neural Networks and SQP: Exploiting Muscle
           Properties</h5>
-        <p>Danny Driess, Heiko Zimmermann, Simon Wolfen, Dan Suissa, Daniel Haeufle, Daniel Hennes, Marc Toussaint, Syn
+        <p><span class="font-weight-bold">Danny Driess</span>, Heiko Zimmermann, Simon Wolfen, Dan Suissa, Daniel Haeufle, Daniel Hennes, Marc Toussaint, Syn
           Schmitt<br>ICRA 2018</p>
         <p>
           <a class="btn btn-primary" href="papers/18-driess-ICRA.pdf" target="_blank" role="button">PDF</a>
@@ -449,12 +486,12 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/17-driess-IROS.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Active Learning with Query Paths for Tactile Object Shape Exploration</h5>
-        <p>Danny Driess, Peter Englert, Marc Toussaint <br> IROS 2017</p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Peter Englert, Marc Toussaint <br> IROS 2017</p>
         <p>
           <a class="btn btn-primary" href="papers/17-driess-IROS.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=4k5unx7En28" target="_blank">Video</a>
@@ -477,13 +514,13 @@
 
     <!-- start bib item -->
     <div class="row pb-4">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <img src="papers/17-driess-ICRA.png" class="img-fluid">
       </div>
       <div class="col-md-8">
         <h5>Constrained Bayesian Optimization of Combined Interaction Force/Task Space Controllers for Manipulations
         </h5>
-        <p>Danny Driess, Peter Englert, Marc Toussaint <br> ICRA 2017 </p>
+        <p><span class="font-weight-bold">Danny Driess</span>, Peter Englert, Marc Toussaint <br> ICRA 2017 </p>
         <p>
           <a class="btn btn-primary" href="papers/17-driess-ICRA.pdf" target="_blank" role="button">PDF</a>
           <a class="btn btn-primary" href="https://www.youtube.com/watch?v=CudjsbB7sfM" target="_blank">Video</a>
